@@ -1,0 +1,41 @@
+@baseUrl = http://localhost:3005/api/blogs
+
+GET {{baseUrl}}
+###
+
+POST {{baseUrl}}
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNsa2FybCIsImlkIjoiNjEwNTk0NDRhMzZiMTQyYzc0M2VmYzkwIiwiaWF0IjoxNjI3NzU1NjMyfQ.uoEu6LakfAwUh5nmaMagaIKFuXmr1KgtFfDS2M3zywY
+
+{
+   "title": "ck 3",
+   "author":"Snurre sprätt",
+   "url":"www.gud2.se",
+   "likes":668 
+}
+###
+POST {{baseUrl}}
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QiLCJpZCI6IjYxMDU5NDU0YTM2YjE0MmM3NDNlZmM5NCIsImlhdCI6MTYyNzc1NTcxNH0.jxa2CFdc_EhW-t4yuDtQleu5jum2_m8OBzy69iseT-c
+
+{
+   "title": "test 3",
+   "author":"Snurre sprätt",
+   "url":"www.gud2.se",
+   "likes":668 
+}
+###
+DELETE {{baseUrl}}/610594d9a36b142c743efcad
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNsa2FybCIsImlkIjoiNjEwNTk0NDRhMzZiMTQyYzc0M2VmYzkwIiwiaWF0IjoxNjI3NzU1NjMyfQ.uoEu6LakfAwUh5nmaMagaIKFuXmr1KgtFfDS2M3zywY
+
+###
+
+PUT {{baseUrl}}/610505a4668e8b396c66f07f
+Content-Type: application/json
+
+{
+   "title": "Bibeln 3.0",
+   "author":"Snurre sprätt",
+   "url":"www.gud2.se",
+   "likes":777 
+}
