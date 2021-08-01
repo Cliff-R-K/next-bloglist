@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import Blog from "./Blog";
-import blogService from "../services/blogs";
 
 const Blogs = ({ data }) => {
 
-console.log(data)    
 const [blogs, setBlogs] = useState(data);
 
   return (
@@ -19,10 +17,4 @@ const [blogs, setBlogs] = useState(data);
 
 export default Blogs;
 
-export const getStaticProps = async () => {
-    const data = await blogService.getAll()
 
-  return {
-    props: { data } // will be passed to the page component as props
-  };
-}

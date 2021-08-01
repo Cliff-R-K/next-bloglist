@@ -5,8 +5,7 @@ const getAll = async () => {
   console.log("getall");
   await dbConnect();
   const response = await Blog.find({});
-  const persons = response((r) => r.toJSON());
-  console.log(persons)
+  const persons = response.map(r => r.toJSON())
   return persons;
 };
 
