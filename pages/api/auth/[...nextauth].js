@@ -28,6 +28,7 @@ export default NextAuth({
           headers: { "Content-Type": "application/json" }
         })
         const user = await res.json()
+        console.log(user)
         // If no error and we have user data, return it
         if (res.ok && user) {
           return user
@@ -38,5 +39,5 @@ export default NextAuth({
     })
   ],
   // A database is optional, but required to persist accounts in a database
-  //database: process.env.DATABASE_URL,
+  //database: process.env.MONGODB_URI,
 })

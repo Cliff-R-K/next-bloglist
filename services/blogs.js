@@ -9,4 +9,8 @@ const getAll = async () => {
   return persons;
 };
 
-export default { getAll };
+const save = async (body) => {
+    
+}
+
+export default { getAll, save };
