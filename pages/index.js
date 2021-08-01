@@ -1,5 +1,6 @@
 import React from "react";
 import { useSession, signIn, signOut } from "next-auth/client";
+import Blogs from "../components/Blogs";
 export default function Home() {
 
   const [session, loading] = useSession();
@@ -9,6 +10,7 @@ export default function Home() {
       <>
         Signed in as {session.user.name} <br />
         <button onClick={() => signOut()}>Sign out</button>
+        <Blogs/>
       </>
     );
   }
