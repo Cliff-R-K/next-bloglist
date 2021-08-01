@@ -4,6 +4,6 @@ POST {{baseUrl}}
 Content-Type: application/json
 
 {
-   "username": "clkarl",
-   "password":"cliff666"
+   "username": "test",
+   "password":"test"
 }

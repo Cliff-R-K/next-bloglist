@@ -1,4 +1,4 @@
-@baseUrl = http://localhost:3005/api/blogs
+@baseUrl = http://localhost:3000/api/blogs
 
 GET {{baseUrl}}
 ###
