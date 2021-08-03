@@ -28,6 +28,7 @@ export default NextAuth({
           headers: { "Content-Type": "application/json" },
         });
         const user = await res.json();
+        console.log("Banan")
         console.log(user);
         // If no error and we have user data, return it
         if (res.ok && user) {
@@ -44,6 +45,9 @@ export default NextAuth({
       if (user?.username) {
         token.username = user.username;
       }
+ /*      if(user?.id){
+        token.id = user.id
+      } */
       return token;
     },
     async session(session, token) {

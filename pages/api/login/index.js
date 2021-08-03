@@ -1,4 +1,3 @@
-import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 import User from "../../../models/user";
 import dbConnect from "../../../lib/dbConnect";
@@ -19,13 +18,9 @@ export default async function handler(req, res) {
           error: "invalid username or password",
         });
       }
-      /* const userForToken = {
-        username: user.username,
-        id: user._id,
-      }; */
-      //const token = jwt.sign(userForToken, process.env.SECRET);
-
-      res.status(200).send({ username: user.username, name: user.name });
+    
+//id: user._id.toString(),
+      res.status(200).send({ username: user.username, name: user.name, id: user._id.toString() });
       break;
 
     default:

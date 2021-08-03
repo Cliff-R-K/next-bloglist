@@ -7,8 +7,9 @@ const Blogs = ({ blogs, setBlogs }) => {
     console.log("sort");
     let blogsCopy = [...blogs];
     blogsCopy.sort((a, b) => a.likes - b.likes);
+
+ 
     setBlogs(blogsCopy);
-    console.log(blogs)
     setUpdate(false)
   }, [update]);
 

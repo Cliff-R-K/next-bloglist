@@ -1,8 +1,13 @@
 import React, { useState } from "react";
 import blogService from '../services/blogs'
+import { useSession} from "next-auth/client";
+import PropTypes from 'prop-types'
 
 const Blog = ({ blog, blogs, setBlogs, setUpdate }) => {
 const [hide, setHide] = useState(true);
+const [session, loading] = useSession();
+
+
 const likeHandler = () => {
     blogService.like(blog)
     let blogsCopy = [...blogs]
@@ -38,10 +43,17 @@ return(
         <div>{blog.url}</div>
         <div>likes {blog.likes}<button onClick={likeHandler}>like</button></div>
         <div>{blog.author}</div>
-        <div><button onClick={removeHandler}>remove</button></div>
+        {session.user.sub === blog.user.id && <div><button onClick={removeHandler}>remove</button></div>}
       </>
     )}
   </div>
 )};
 
 export default Blog;
+
+Blog.protoTypes = {
+    blog: PropTypes.object.isRequired, 
+    blogs: PropTypes.array.isRequired, 
+    setBlogs: PropTypes.func.isRequired, 
+    setUpdate: PropTypes.func.isRequired
+}

@@ -25,6 +25,7 @@ const blogs = ({ data }) => {
       <br />
       {createNew && (
         <BlogForm
+        session={session}
           user={session.user}
           blogs={blogs}
           setBlogs={setBlogs}

@@ -20,7 +20,7 @@ const save = async (blog) => {
     headers,
     body: JSON.stringify(blog),
   });
-  return response.json();
+  return response.json(response);
 };
 
 const like = async (blog) => {
@@ -33,7 +33,7 @@ const like = async (blog) => {
 };
 
 const remove = async (id) => {
-  const response = await fetch(`${baseUrl}/api/blogs/${id}`, { method: "DELETE"});
+  await fetch(`${baseUrl}/api/blogs/${id}`, { method: "DELETE"});
   
 };
 
