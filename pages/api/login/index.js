@@ -19,13 +19,13 @@ export default async function handler(req, res) {
           error: "invalid username or password",
         });
       }
-      const userForToken = {
+      /* const userForToken = {
         username: user.username,
         id: user._id,
-      };
-      const token = jwt.sign(userForToken, process.env.SECRET);
+      }; */
+      //const token = jwt.sign(userForToken, process.env.SECRET);
 
-      res.status(200).send({ token, username: user.username, name: user.name });
+      res.status(200).send({ username: user.username, name: user.name });
       break;
 
     default:

@@ -4,20 +4,18 @@ import { useRouter } from 'next/router'
 export default function Home() {
 
   const [session, loading] = useSession();
+  const isUser = !!session?.user;
+  useEffect(() => {
+    if (loading) return; // Do nothing while loading
+    if (!isUser) signIn(); // If not authenticated, force log in
+  }, [isUser, loading]);
+
   const router = useRouter()
 
- /*  useEffect(() => {
-  if(!session){
-    alert(loading)
-    signIn()
-    //router.push('/api/auth/signin?callbackUrl=http://localhost:3000')
-  }
-  }, [session]) */
 
 
   if (session) {
     console.log("session = true")
-    console.log(session)
     router.push('/blogs')
     return (
       <>
@@ -26,13 +24,14 @@ export default function Home() {
       </>
     );
   }
-  console.log("session = false")
+  return null
+ /*  console.log("session = false")
   return (
     <>
       Not signed in <br />
       <button onClick={() => signIn()}>Sign in</button>
     </> 
-  );
+  ); */
 }
 
 
